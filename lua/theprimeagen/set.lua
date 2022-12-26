@@ -1,4 +1,12 @@
 -- vim.opt.guicursor = ""
+-- here is how check host os:
+if vim.fn.has("win32") then
+    print("windows detected")
+elseif vim.fn.has("wsl") then
+    print("wsl detected")
+elseif vim.fn.has("unix") then
+    print("unix detected")
+end
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -14,7 +22,7 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = vim.fn.expand("$HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
@@ -32,7 +40,7 @@ vim.opt.colorcolumn = "80"
 
 -- enabling clipboard for wsl
 -- https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl
-if vim.fn.has("wsl") == 1 then
+if vim.fn.has("wsl") or vim.fn.has("win32") then
   vim.opt.clipboard = "unnamedplus"
 end
 

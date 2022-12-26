@@ -1,3 +1,5 @@
+require("nvim-treesitter.install").prefer_git = true
+
 require("theprimeagen.set")
 require("theprimeagen.remap")
 
@@ -31,3 +33,15 @@ autocmd({"BufWritePre"}, {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
+-- register new command RealPath and print the real path of the current filename
+function RealPath()
+    local path = vim.fn.expand('%:p')
+    local real_path = vim.fn.fnamemodify(path, ':p')
+    -- put the real path_into the clipboard
+    vim.fn.setreg('+', real_path)
+    print(real_path)
+end
+vim.cmd('command! -nargs=0 RealPath :lua RealPath()')
+vim.keymap.set('n', '<leader>pp', ':RealPath<CR>')
+
