@@ -7,7 +7,7 @@ lsp.ensure_installed({
   'eslint',
   'sumneko_lua',
   'rust_analyzer',
-  'pyright',
+  'pylsp',
   'clangd',
   'bashls',
   'jsonls',
@@ -68,3 +68,15 @@ vim.diagnostic.config({
     virtual_text = true,
 })
 
+require('lspconfig').pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391'},
+          maxLineLength = 80
+        }
+      }
+    }
+  }
+}
