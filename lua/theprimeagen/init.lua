@@ -45,3 +45,25 @@ end
 vim.cmd('command! -nargs=0 RealPath :lua RealPath()')
 vim.keymap.set('n', '<leader>pp', ':RealPath<CR>')
 
+function WriteDefaultClangFormat()
+    local sample = [[
+Language: Cpp
+BasedOnStyle: Microsoft
+IndentWidth: 4
+UseTab: Never
+TabWidth: 4
+ColumnLimit: 80
+AlignAfterOpenBracket: BlockIndent
+]]
+    local file = io.open(".clang-format", "w")
+    -- check for nil
+    if file then
+        file:write(sample)
+        file:close()
+    else
+        print("Failed to write .clang-format")
+    end
+end
+vim.cmd('command! -nargs=0 WriteClangFormatDefault :lua WriteDefaultClangFormat()')
+
+
