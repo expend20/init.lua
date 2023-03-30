@@ -8,6 +8,7 @@ elseif vim.fn.has("unix") then
     print("unix detected")
 end
 
+vim.opt.list = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.nu = true
