@@ -1,4 +1,5 @@
 ### ThePrimeagen's init.lua
+
 [The full video of me setting up this repo](https://www.youtube.com/watch?v=w7i4amO_zaE)
 
 For anyone that is interested in my vimrc, i will have a commit log below
@@ -16,7 +17,7 @@ Install neovim, figure out the directory where this repo should be cloned.
 Clone it
 
 ```
-git clone https://github.com/expend20/init.lua %APPDATA%\Local\nvim
+git clone https://github.com/expend20/init.lua AppData\Local\nvim
 ```
 
 Install [packer](https://github.com/wbthomason/packer.nvim#quickstart). Open `packer.lua` file, then
@@ -26,7 +27,19 @@ so %
 :PackerInstall
 ```
 
+Install python, node & read `:checkhealh`
+
+In case of telescope picker error:
+
+```
+cd ..AppData\Local\nvim-data\site\pack\packer\start\telescope.nvim
+git checkout master
+```
+
+... and restart nvim.
+
 ### Change Log
+
 * [33eee9ad](https://github.com/ThePrimeagen/init.lua/commit/33eee9ad0c035a92137d99dae06a2396be4c892e) initial commits
 * [cb210006](https://github.com/ThePrimeagen/init.lua/commit/cb210006356b4b613b71c345cb2b02eefa961fc0) netrw, autogroups for yank highlighting, and auto remove whitespace
 * [c8c0bf4a](https://github.com/ThePrimeagen/init.lua/commit/c8c0bf4aeacd0bd77136d9c5ee490680515a106b) zenmode.  i really like this plugin
