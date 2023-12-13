@@ -54,6 +54,7 @@ return require('packer').startup(function(use)
   use("folke/zen-mode.nvim")
   use("github/copilot.vim")
   use("airblade/vim-rooter")
+  use("simrat39/rust-tools.nvim")
 
 end)
 

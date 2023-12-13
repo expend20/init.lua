@@ -33,6 +33,7 @@ In case of telescope picker error:
 
 ```
 cd ..AppData\Local\nvim-data\site\pack\packer\start\telescope.nvim
+cd ~/.local/share/nvim/site/pack/packer/start/telescope.nvim
 git checkout master
 ```
 
